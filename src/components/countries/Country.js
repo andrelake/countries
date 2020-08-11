@@ -1,0 +1,17 @@
+import React, { Component } from 'react';
+
+import css from './countries.module.css';
+
+export default class Country extends Component {
+  render() {
+    const { country } = this.props;
+    const { name, flag } = country;
+
+    return (
+      <div className={`${css.border} ${css.country}`} key={country.id}>
+        <img className={css.flag} src={flag} alt={name}></img>
+        <span className={css.countryName}> {name}</span>
+      </div>
+    );
+  }
+}
